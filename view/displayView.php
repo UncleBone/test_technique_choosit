@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Test Technique Choosit</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="<?= CSS_PATH . DS . 'user.css' ?>">
-</head>
-<body>
+
 	<a href=".?controller=user&action=creation"><button>Créer un nouvel utilisateur</button></a>
 <?php 
 createForm();
@@ -13,11 +6,7 @@ createTable($data);
 if(!is_null($detailsId)){
 	createDetails($details);
 }
-?>
-</body>
-</html>
 
-<?php
 
 function createForm(){
 	echo '<form action="." method="GET">';
@@ -27,7 +16,7 @@ function createForm(){
 	echo '<input type="text" name="rechGroupe" placeholder="Nom de groupe">';
 	echo '<input type="text" name="rechNom" placeholder="Nom d\'utilisateur">';
 	echo '<input type="submit" value="Valider">';
-	echo '<a href="."><button type="button" class="cancel" disable>Annuler</button></a>';
+	echo '<a href="."><button type="button" class="cancel">Annuler</button></a>';
 	echo '</form>';
 }
 

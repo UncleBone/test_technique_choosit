@@ -1,0 +1,76 @@
+body
+{
+	margin: 0;
+	font-family: Verdana;
+}
+
+td, th
+{
+	padding: 10px;
+}
+
+table
+{
+	float: left;
+}
+
+table tr:nth-child(even)
+{
+	background-color: lightgreen;
+}
+
+thead
+{
+	background-color: lightgrey;
+}
+
+.details
+{
+	float: left;
+	margin-left: 20px;
+	background-color: grey;
+	color: white;
+	border-radius: 5px;
+	padding: 0 20px 0 20px;
+}
+
+.details a, form#creation a
+{
+	text-decoration: none;
+	text-align: right;
+	color: white;
+}
+
+form
+{
+	margin: 20px 0;
+}
+
+.cancel
+{
+	float
+}
+
+form#creation
+{
+	margin: 20px;
+}
+
+form#creation label, form#creation input, form#creation select
+{
+	display: block;
+	margin: 10px;
+}
+
+a#retour
+{
+	margin-left: 30px;
+}
+
+.error
+{
+	background-color: rgb(200,100,100);
+	padding: 10px;
+	margin-top: 20px;
+	text-align: center;
+}
