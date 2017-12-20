@@ -34,10 +34,9 @@ if(file_exists(CONTROLLERS_PATH . DS . $controllerName . '.php')){
     include(VIEWS_PATH . DS . '404.php');
     exit;
 }
-//On entre nos parametres(GET) et nos données(POST) dans notre controleur.
+//On entre nos parametres(GET) dans notre controleur.
 $controller->setParameters($_GET);
-$controller->setData($_POST);
-// $controller->setSession(!empty($_SESSION['neozorus']) ? $_SESSION['neozorus'] : array());
+
 //On appelle la méthode correspondant à l'action
 if(method_exists($controller, $action)){	
 	$controller->$action();

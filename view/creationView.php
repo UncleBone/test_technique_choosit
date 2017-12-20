@@ -5,6 +5,7 @@
 	<input type="text" name="nom" placeholder="Nom">
 	<input type="text" name="prenom" placeholder="Prénom">
 	<input type="email" name="email" placeholder="Email">
+	<label>Date de naissance:</label>
 	<input type="date" name="date" placeholder="Date de naissance">
 	<?php
 	createSelectGroupe($groupes);

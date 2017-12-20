@@ -21,6 +21,9 @@ function createForm(){
 }
 
 function createTable($data){
+	echo '<form method="GET" action=".">';
+	echo '<input type="hidden" name="controller" value="user">';
+	echo '<input type="hidden" name="action" value="suppressionLot">';
 	echo '<table>';
 	echo '<thead>';
 	echo '<th>Groupe</th><th>Utilisateur</th><th>Email</th>';
@@ -28,11 +31,18 @@ function createTable($data){
 	foreach($data as $value){
 		echo '<tr>';
 		echo '<td>'.$value['g_nom'].'</td><td>'.strtoupper($value['u_nom']).' '.$value['u_prenom'].'</td><td>'.$value['u_email'].'</td>';
-		echo '<td><a href=".?controller=user&action=display&details='.$value['u_id'].'"><button>Détails</button></a></td>';
+		echo '<td><a href=".?controller=user&action=display&details='.$value['u_id'].'"><button type="button">Détails</button></a></td>';
+		echo '<td><a href=".?controller=user&action=supprimer&id='.$value['u_id'].'"><button type="button">Supprimer</button></a></td>';
+		echo '<td><input type="checkbox" name="'.$value['u_id'].'" value="supprimer"></td>';
 		echo '</tr>';
 	}
+	echo '<tr>';
+	echo '<td colspan=5></td><td><input type="submit" value="Supprimer les utilisateurs cochés"></td>';
+	echo '</tr>';
 	echo '</table>';
+	echo '</form>';
 }
+
 
 function createDetails($details){
 	echo '<div class="details">';

@@ -1,6 +1,7 @@
 <?php
 class UserModel extends CoreModel
 {
+	/**Retourne tous les utilisateurs ainsi que leurs groupes**/
 	public function selectAll(){
 		$req = 'SELECT * FROM utilisateur
 				INNER JOIN groupe ON g_id = u_groupe
@@ -42,8 +43,20 @@ class UserModel extends CoreModel
 	}
 
 	public function saveNewUser($nom,$prenom,$email,$date,$groupe){
-		$req = 'INSERT INTO utilisateur (u_nom,u_prenom,u_email,u_dateAnniversaire,u_groupe) VALUES (:nom,:prenom,:email,:dateA,:groupe)';
+		$req = 'INSERT INTO utilisateur (u_nom,u_prenom,u_email,u_dateNaissance,u_groupe) VALUES (:nom,:prenom,:email,:dateA,:groupe)';
 		$param = [ 'nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'dateA' => $date, 'groupe' => $groupe ];
 		return $this->makeStatement($req,$param);
+	}
+
+	public function supprimer($id){
+		$req = 'DELETE FROM utilisateur WHERE u_id = :id';
+		$param = [ 'id' => $id ];
+		return $this->makeStatement($req,$param);
+	}
+
+	public function supprimerLot($tab){
+		foreach ($tab as $value) {
+			$this->supprimer($value);
+		}
 	}
 }

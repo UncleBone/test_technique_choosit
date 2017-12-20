@@ -16,6 +16,4 @@ define('DB_USER', 'root');
 define('DB_PASS','');
 
 //Chemins d'accès aux données
-// define('IMG_PATH', 'assets' . DS . 'img');
 define('CSS_PATH', 'assets' . DS . 'css');
-// define('JS_PATH', 'assets' . DS . 'js');
